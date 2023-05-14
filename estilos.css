@@ -27,7 +27,7 @@ html{
 	align-items: center;
 	padding: 15px 20px;
 }
-.contenedor-header header .logo a{
+.contenedor-header header .logo span{
 	font-family: 'work sans';
 	font-size: 32px;
 	color: #1CB698;
@@ -77,7 +77,7 @@ html{
 }
 .inicio .contenido-banner img{
 	margin-top: 40px;
-	border: 10px solid #1CB698;
+	border: 5px solid #1CB698;
 	display:block;
 	width: 80%;
 	margin: auto;
@@ -184,6 +184,12 @@ html{
 	font-size: 30px;
 	margin-bottom: 10px;
 }
+.sobremi a{
+	color: #fff;
+	font-size: 16px;
+	font-family: 'work sans';
+	text-decoration: none;
+}
 .sobremi button{
 	cursor: pointer;
 	background-color: transparent;
@@ -192,8 +198,6 @@ html{
 	display: block;
 	margin: 20px auto;
 	padding: 10px 22px;
-	font-size: 16px;
-	color: #fff;
 	position: relative;
 	z-index: 10;
 }
