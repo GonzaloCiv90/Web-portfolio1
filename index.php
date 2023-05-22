@@ -5,6 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
 	<title>Portfolio: Gonzalo Civita</title>
 	<link rel="stylesheet" href="estilos.css">
 </head>
@@ -386,16 +388,27 @@
 			<div class="fila">
 				<!--Formulario-->
 				<div class="col">
-					<input type="text" placeholder= "Tu Nombre" required>
-					<input type="text" placeholder= "Número Telefónico" required>
-					<input type="Email" placeholder= "Dirección de Correo" required>
-					<input type="text" placeholder= "Tema" required>
-					<textarea name="" id="" cols="30" rows="10" placeholder="Mensaje" required></textarea>
-					<button>
-						Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-						<span class="overlay"></span>
-					</button>
+					<form action="enviar.php" method="post" id="miFormulario">
+						<input type="text" name="nombre" placeholder= "Tu Nombre" required>
+						<input type="text" name="numero" placeholder= "Número Telefónico" required>
+						<input type="email" name="correo" placeholder= "Dirección de Correo" required>
+						<input type="text" name="tema" placeholder= "Tema" required>
+						<textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+						<div class="captcha" id="captcha">
+							<div class="g-recaptcha" data-sitekey="6Lel4h4mAAAAALVbtJkO2k4ORRHMY0Rqaf_ifY9t"></div>
+						</div>
+						<button type="submit" value="Enviar">
+							Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+							<span class="overlay"></span>
+						</button>
+					</form>
+					 <?php 
+                		if (isset ($_GET['ok_bd'])) {
+                			echo "<p>Correo enviado.</p>";
+            			};
+            		 ?>
 				</div>
+		
 				<!--mapa-->
 				<div class="col">
 					<img src="img/ubicacion.png" alt="imagen de mapa">
