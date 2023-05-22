@@ -404,7 +404,7 @@
 					</form>
 					 <?php 
                 		if (isset ($_GET['ok_bd'])) {
-                			echo "<p>Correo enviado.</p>";
+                			echo "<p color: #1CB698>Correo enviado.</p>";
             			};
             		 ?>
 				</div>
