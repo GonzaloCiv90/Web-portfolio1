@@ -8,7 +8,7 @@ $mensaje = $_POST['mensaje'];
 //Validamos el reCaptcha de la API de google
 $ip = $_SERVER['REMOTE_ADDR'];
 $captcha = $_POST['g-recaptcha-response'];
-$secretkey = "6Lel4h4mAAAAAAeQnXB4Imu3HpWJZu4fVAA3X6wq";
+$secretkey = "secretkey";
     
 $respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
 $atributos = json_decode($respuesta, TRUE);
